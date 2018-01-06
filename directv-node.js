@@ -1,7 +1,18 @@
 var https = require('http');
-//TODO 
-var uri = ""; // the external IP including port number - remember you will need to port forward to your directv receiver's port 8080
-var mac_addr = ""; //your client mac address without hyphens and ALL CAPS
+//TODO
+var uri = ""; // the external IP address or public hostname, including port number
+//               remember you will need to port forward to your directv receiver's port 8080
+var default_zone = "living room";
+// define the zones you need, specifying client mac address (for Genie Mini clients) without hyphens and in ALL CAPS
+// the master Genie DVR unit does not need to have the mac address specified
+var zone_info = {
+    "living room": {
+        mac_addr: ""
+    },
+    "bed room": {
+        mac_addr: ""
+    }
+}
 
 //EVERYTHING BELOW THIS LINE NEEDS NO CHANGES TO WORK
 var assemble = "";
@@ -344,14 +355,18 @@ generateResponse = (speechletResponse, sessionAttributes) => {
     };
 }
 detectZone = function (zone) {
-    if (zone == "bed room") {
-        console.log('bed');
-        assemble = "clientAddr=" + mac_addr;
-        return;
+    if (zone == undefined || zone == null) {
+        zone = default_zone;
     }
-    if (zone == "living room" || zone == undefined || zone == null) {
-        console.log('living');
+    msg = "Zone: " + zone;
+
+    if (zone_info[zone].mac_addr && zone_info[zone].mac_addr != null) {
+        assemble = "clientAddr=" + zone_info[zone].mac_addr;
+        msg += "\tclientAddr: " + zone_info[zone}.mac_addr;
+    } else {
         assemble = undefined;
-        return;
     }
+
+    console.log(msg);
+    return;
 }
