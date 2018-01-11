@@ -40,41 +40,117 @@ page up
 channel down
 page down
 previous
-CNN
-A&E
-AMC
-animal planet
-b.e.t.
-bravo
-comedy central
-C span
-cartoon network
-discovery
-disney channel
-disney junior
-disney x.d.
-food network
-fox
-FX
-HGTV
-history channel
-lifetime
-MSNBC
-MTV
-MTV two
-national geographic
-nick junior
-spike
-syfy
-TBS
-TNT
-true TV
-VH one
-ESPN
-ESPN two
-ABC family
 show
 channel
+AMC
+A&E
+animal planet
+audience
+BBC america
+BBC world news
+BET
+Bloomberg
+bravo
+CBS Sports Network
+CMT
+CNBC
+CNN
+comedy central
+C span
+C span 2
+cartoon network
+cartoon network west
+cooking channel
+DIY network
+discovery
+Disney channel
+Disney channel west
+Disney junior
+Disney XD
+ESPN
+ESPN 2
+ESPN news
+ESPN U
+EWTN
+Fox sports 1
+Fox sports 2
+food network
+FX
+FXM
+FXX
+Fox business
+Fox news
+free form
+golf channel
+great american country
+HGTV
+hallmark channel
+headline news
+history channel
+ion
+ion west
+ion local
+fox
+KTVU
+KRON
+CBS
+KPIX
+ABC
+KGO
+NBC
+KNTV
+KOFY
+KTSF
+KTVU plus
+KICU
+the CW
+KBCW
+PBS
+KQED
+KRCB
+KQEH
+KKPX
+lifetime
+lifetime movie network
+MSNBC
+MLB network
+MTV
+MTV classic
+MTV2
+national geographic
+NBA TV
+NBC sports network
+NBC sports california
+NBC sports bay area
+NFL network
+NHL network
+nat geo wild
+national geographic
+nick junior
+nickelodeon
+nickelodeon west
+nick toons
+teen nick
+own
+olympic channel
+oxygen
+pop
+SEC network
+spike
+syfy
+the CW
+TBS
+TCM
+TLC
+TNT
+TV land
+tennis channel
+the weather channel
+travel channel
+true TV
+USA
+VH1
+WGN
 
 ----------------------------
 SLOT TYPE: ZONE
