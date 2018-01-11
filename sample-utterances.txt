@@ -1,10 +1,12 @@
 GetCommand to {command} in the {zoneId}
 GetCommand go to {command} in the {zoneId}
+GetCommand watch {command} in the {zoneId}
 GetCommand what {command} am i watching in the {zoneId}
 GetCommand {command} in the {zoneId}
 GetCommand {command}
 GetCommand go to {command}
 GetCommand to {command}
+GetCommand watch {command}
 GetCommand what {command} am i watching in the {zoneId}
 GetCommand what {command} am i watching 
 

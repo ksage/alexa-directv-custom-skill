@@ -54,7 +54,6 @@ exports.handler = (event, context) => {
                 case "pause":
                 case "freeze":
                     path = '/remote/processKey?key=pause';
-
                     break;
                 case "guide":
                     path = '/remote/processKey?key=guide'
