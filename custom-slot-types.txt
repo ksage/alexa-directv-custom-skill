@@ -117,7 +117,6 @@ MLB network
 MTV
 MTV classic
 MTV2
-national geographic
 NBA TV
 NBC sports network
 NBC sports california
@@ -138,7 +137,6 @@ pop
 SEC network
 spike
 syfy
-the CW
 TBS
 TCM
 TLC

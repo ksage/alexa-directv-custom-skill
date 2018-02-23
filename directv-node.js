@@ -1,6 +1,6 @@
 var https = require('http');
 //TODO
-var uri = ""; // the external IP address or public hostname, including port number
+var uri = "http://ip_or_name:port"; // the external IP address or public hostname, including port number
 //               remember you will need to port forward to your directv receiver's port 8080
 var default_zone = "living room";
 // define the zones you need, specifying client mac address (for Genie Mini clients) without hyphens and in ALL CAPS
@@ -12,7 +12,7 @@ var zone_info = {
     "bed room": {
         mac_addr: ""
     }
-}
+};
 
 //EVERYTHING BELOW THIS LINE NEEDS NO CHANGES TO WORK
 var assemble = "";
@@ -56,7 +56,7 @@ exports.handler = (event, context) => {
                     path = '/remote/processKey?key=pause';
                     break;
                 case "guide":
-                    path = '/remote/processKey?key=guide'
+                    path = '/remote/processKey?key=guide';
                     break;
                 case "power":
                 case "turn on":
@@ -85,7 +85,7 @@ exports.handler = (event, context) => {
                     break;
                 case "record":
                 case "save":
-                    path = '/remote/processKey?key=record'
+                    path = '/remote/processKey?key=record';
                     break;
                 case "active":
                     path = '/remote/processKey?key=active';
@@ -460,7 +460,7 @@ exports.handler = (event, context) => {
                     var body = "";
                     https.get(endpoint, (response) => {
                         response.on('data', (chunk) => {
-                            body += chunk
+                            body += chunk;
                         });
                         response.on('end', () => {
                             var data = JSON.parse(body);
@@ -479,7 +479,7 @@ exports.handler = (event, context) => {
                     var body = "";
                     https.get(endpoint, (response) => {
                         response.on('data', (chunk) => {
-                            body += chunk
+                            body += chunk;
                         });
                         response.on('end', () => {
                             var data = JSON.parse(body);
@@ -495,7 +495,7 @@ exports.handler = (event, context) => {
                     var body = "";
                     https.get(endpoint, (response) => {
                         response.on('data', (chunk) => {
-                            body += chunk
+                            body += chunk;
                         });
                         response.on('end', () => {
                             var data = JSON.parse(body);
@@ -518,7 +518,7 @@ exports.handler = (event, context) => {
                 var body = "";
                 https.get(endpoint, (response) => {
                     response.on('data', (chunk) => {
-                        body += chunk
+                        body += chunk;
                     });
                     response.on('end', () => {
                         var data = JSON.parse(body);
@@ -538,15 +538,15 @@ exports.handler = (event, context) => {
             context.fail(`INVALID REQUEST TYPE: ${event.request.type}`);
         }
     } catch (error) {
-        context.fail(`Exception: ${error}`)
+        context.fail(`Exception: ${error}`);
     }
-}
+};
 
 
 
 
 // Helpers
-buildSpeechletResponse = (outputText, shouldEndSession) => {
+function buildSpeechletResponse(outputText, shouldEndSession) {
     return {
         outputSpeech: {
             type: "PlainText",
@@ -554,23 +554,25 @@ buildSpeechletResponse = (outputText, shouldEndSession) => {
         },
         shouldEndSession: shouldEndSession
     };
-};
-generateResponse = (speechletResponse, sessionAttributes) => {
+}
+
+function generateResponse(speechletResponse, sessionAttributes) {
     return {
         version: "1.0",
         sessionAttributes: sessionAttributes,
         response: speechletResponse
     };
 }
-detectZone = function (zone) {
+
+function detectZone(zone) {
     if (zone == undefined || zone == null) {
         zone = default_zone;
     }
-    msg = "Zone: " + zone;
+    var msg = "Zone: " + zone;
 
     if (zone_info[zone].mac_addr && zone_info[zone].mac_addr != null) {
         assemble = "clientAddr=" + zone_info[zone].mac_addr;
-        msg += "\tclientAddr: " + zone_info[zone}.mac_addr;
+        msg += "\tclientAddr: " + zone_info[zone].mac_addr;
     } else {
         assemble = undefined;
     }
